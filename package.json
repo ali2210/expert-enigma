@@ -1,0 +1,19 @@
+{
+  "name": "dwarfs-pwa",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "boxicons": "^2.0.7",
+    "core-js": "^3.9.1",
+    "nuxt": "^2.15.3",
+    "three": "^0.129.0",
+    "vuesax": "^4.0.1-alpha.25"
+  },
+  "devDependencies": {}
+}
