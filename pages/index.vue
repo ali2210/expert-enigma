@@ -1,117 +1,115 @@
 <template>
   <div class="center examplex">
-      <vs-navbar center-collapsed v-model="active">
-        <template #left>
-          <img :src="'../logo.png'" class="logo" alt="">
+    <template>
+    <div class="hidden">
+      <vs-sidebar
+        absolute
+        hover-expand
+        reduce
+        v-model="active"
+        open
+        >
+        <template #logo>
+          <img src="../static/logo.png" alt=""/>
         </template>
-        <vs-navbar-item :active="active == 'home'" id="home">
+        <vs-sidebar-item id="home">
+          <template #icon>
+            <i 
+            shadow 
+            dark 
+            class='bx bx-home'></i>
+          </template>
           Home
-        </vs-navbar-item>
-        <vs-navbar-item :active="active == 'shop'" id="shop">
+        </vs-sidebar-item>
+        <vs-sidebar-item id="shop">
+          <template #icon>
+            <i 
+            shadow 
+            dark 
+            class='bx bxs-shopping-bag-alt'></i>
+          </template>
           Shop
-        </vs-navbar-item>
-        <vs-navbar-item :active="active == 'gallery'" id="gallery">
+        </vs-sidebar-item>
+        <vs-sidebar-item id="news">
+          <template #icon>
+            <i 
+            shadow 
+            dark 
+            class='bx bx-news'></i>
+          </template>
+          News
+        </vs-sidebar-item>
+        <vs-sidebar-item id="gallery">
+          <template #icon>
+            <i 
+            shadow 
+            dark 
+            class='bx bx-images'></i>
+          </template>
           Gallery
-        </vs-navbar-item>
-        <vs-navbar-item :active="active == 'market'" id="market">
-          Marketplace
-        </vs-navbar-item>
-        <template #right>
-          <vs-button flat >Login</vs-button>
-          <vs-button>Get Started</vs-button>
-        </template>
-      </vs-navbar>
-      <template>
-      <div class="window-background">
-        <div class="container" style="font-size: larger;
-  font-style: oblique;
-  font-weight: bolder;
-  font-variant: petite-caps;position:relative;left:438px;font-weight:bolder;font-style:oblique;">
-            <template>
-              <!-- sky 4k image -->
-            </template>          
-          Explore your limits way beyond the stars , and consciousness?
-          <template>
-            <div class="btns">
-              <vs-button
-                color="#7d33ff"
-                relief
-                border @click="active3=!active3">
-                Contribute
-              </vs-button>
-              <vs-dialog width="300px" not-center v-model="active3">
-                <template #header> 
-                  <h4 class="not-margin">
-                    $ docker run --hostname=wizdwarfs -p 5000:5000 -it ali2210/wiz-dwarfs
-                  </h4>
-                </template>
-              </vs-dialog>  
-            </div>
-            <div class="btns-right">
-               <vs-button
-                 color="rgb(59,222,200)"
-                  gradient
-                  :active="active == 6"
-                  @click="active = 6"
-                >
-                Open Projects
-               </vs-button>
-            </div>  
-          </template> 
-          <template>
-            <div class="philosphyDiv">
-              Life is like a codebase. Every instruction documentated in our DNA-REPO. When our body update
-              nature codebase. First of all agent download the data from DNA-REPO, then compile on RNA . These instructions
-              generate life code in modular form.   
-            </div>
-            <div class="alienDiv">
-              When unknown code inject in our hardware (Body). That unknown code is alien code / virus.
-              Around 70 -80% instructions are written in alien code are similar to us. That is
-              reason alien code instruction direcly compile on our body. But when our agent detect
-              alien code it trigger preventative measure against hardware.   
-            </div>
-            <span class="questiondiv"> We don't have modular computer. How can you compile alien instructions? </span>
-            <span class="answerdiv"> The Answer is simple. @wizdwarfs building modular computing interface. You can try.</span>
-          </template>
-          <template>
-            <div class="goaldiv">
-              <template>
-                  <vs-button
-                      class="goal1"
-                      shadow
-                      :active="active == 0"
-                      @click="active = 0">
-                  </vs-button>
-                <div class="linediv"></div>
-                <vs-button
-                      class="goal2"
-                      shadow
-                      :active="active == 0"
-                      @click="active = 0">
-                  </vs-button>
-                <div class="linediv1"></div>
-                <vs-button
-                      class="goal3"
-                      shadow
-                      :active="active == 0"
-                      @click="active = 0">
-                  </vs-button>
-                  <div class="linediv2"></div>
-                <vs-button
-                      class="goal4"
-                      shadow
-                      :active="active == 0"
-                      @click="active = 0">
-                  </vs-button>
+        </vs-sidebar-item>
+        <vs-sidebar-group>
+          <template #header>
+            <vs-sidebar-item arrow>
+              <template #icon>
+                <i class='bx bx-group'></i>
               </template>
-            </div>
+                Connect
+            </vs-sidebar-item>
           </template>
-        </div>
+          <vs-sidebar-item id="Instagram">
+            <template #icon>
+              <i class='bx bxl-instagram'></i>
+            </template>
+            Instagram
+          </vs-sidebar-item>
+          <vs-sidebar-item id="twitter">
+            <template #icon>
+              <i class='bx bxl-twitter' ></i>
+            </template>
+            Twitter
+          </vs-sidebar-item>
+          <vs-sidebar-item id="Facebook">
+            <template #icon>
+              <i class='bx bxl-facebook' ></i>
+            </template>
+            Facebook
+          </vs-sidebar-item>
+        </vs-sidebar-group>
+        <vs-sidebar-group>
+          <template #header>
+            <vs-sidebar-item arrow>
+              <template #icon>
+                <i class='bx bxs-user-circle' ></i>
+              </template>
+                Profile
+            </vs-sidebar-item>
+          </template>
+          <vs-sidebar-item id="wallet">
+            <template #icon>
+              <i class='bx bxs-coin-stack' ></i>
+            </template>
+            Debit
+          </vs-sidebar-item>
+          <vs-sidebar-item id="sign-in">
+            <template #icon>
+              <i class='bx bxs-user' ></i>
+            </template>
+            Sign-in
+          </vs-sidebar-item>
+        </vs-sidebar-group>
+      </vs-sidebar>
+    </div>    
+  </template>
+  <template>
+    <div class="billboard">
+      <div class="heading">
+          We are the wizards. We are building products that are unique, cool & bring ease in your life.    
       </div>
-      </template>
     </div>
+  </template>
+  </div>
 </template>
-
 <script>
 import Logo from '~/components/Logo.vue'
 import VuesaxLogo from '~/components/VuesaxLogo.vue'
@@ -119,14 +117,8 @@ import VuesaxLogo from '~/components/VuesaxLogo.vue'
 
 export default {
   data:()=>({
-    active: 'home'
+    active:'home',
   }),
-
-  data:()=>({
-    active3 : false,
-    active : ''
-  }),
- 
   
 }
 </script>
@@ -207,122 +199,24 @@ export default {
   font-weight: 400;
   margin: 10px;
 }
-.window-background{
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  background: black;
-  color: white;
-  width: 100%;
-  border-radius: 10px;
-}
-.btns{
-  position: absolute;
-  top: 261px;
-  left: 168px;
-}
-.btns-right{
-  position: absolute;
-  left: 26px;
-  top: 261px;
-}
-.not-margin{
-  color: darkgrey;
-  position: relative;
-  top: 20px;
-}
 .logo{
   position: relative;
   left: 332px;
   width: 27%;
 }
-.philosphyDiv{
+.billboard{
+  position: relative;
+  left: 0px;
+  top: 233px;
+  font-family: monospace;
+}
+.heading{
   position: absolute;
-  top: 428px;
-  width: 30%;
-  left: -325px;
-  color: black;
-}
-.alienDiv{
-  position: relative;
-  top: 491px;
-  width: 70%;
-  color: black;
-  left: 181px;
-}
-.questiondiv{
-  position: relative;
-  top: 165px;
-  left: -875px;
-}
-.answerdiv{
-  position: relative;
-  top: 162px;
-  right: 747px ;
-}
-.goaldiv{
-  position: absolute;
-  top: 607px;
-  left: -405px;
-}
-.linediv{
-  position: absolute;
-  width: 70px;
-  height: 4px;
-  background: lawngreen;
-}
-.goal1{
-  position: relative;
-  top: 15px;
-  left: -12px;
-  height: 11px;
-  width: 12px;
-  background: purple;
-}
-.goal2{
-  position: relative;
-  top: -1px;
-  left: 61px;
-  height: 11px;
-  width: 12px;
-  background: gold;
+  width: 300px;
+  text-align: center;
+  left: 123px;
 }
 
-.linediv1{
-  position: absolute;
-  width: 70px;
-  height: 4px;
-  background: lawngreen;
-  left: 68px;
-  top:21px;
-}
-
-.goal3{
-  position: relative;
-  top: -17px;
-  left: 124px;
-  height: 11px;
-  width: 12px;
-  background: seagreen;
-}
-
-.linediv2{
-  position: absolute;
-  width: 70px;
-  height: 4px;
-  background: lawngreen;
-  left: 141px;
-  top:21px;
-}
-
-.goal4{
-  position: relative;
-  top: -33px;
-  left: 201px;
-  height: 11px;
-  width: 12px;
-  background: red;
-}
 
 
 </style>
