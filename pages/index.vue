@@ -14,37 +14,56 @@
         </template>
         <vs-sidebar-item id="home">
           <template #icon>
-            <i 
-            shadow 
-            dark 
-            class='bx bx-home'></i>
+            <NuxtLink to="/">
+              <i 
+              shadow 
+              dark 
+              class='bx bx-home'></i>
+            </NuxtLink>
           </template>
           Home
         </vs-sidebar-item>
         <vs-sidebar-item id="shop">
           <template #icon>
-            <i 
-            shadow 
-            dark 
-            class='bx bxs-shopping-bag-alt'></i>
+           <NuxtLink to="/shop">
+              <i 
+              shadow 
+              dark 
+              class='bx bxs-shopping-bag-alt'></i>
+            </NuxtLink>
           </template>
           Shop
         </vs-sidebar-item>
+        <vs-sidebar-item id="apps">
+          <template #icon>
+            <NuxtLink to="/apps">
+              <i 
+              shadow 
+              dark 
+              class='bx bxs-category'></i>
+            </NuxtLink>
+          </template>
+          Apps
+        </vs-sidebar-item>
         <vs-sidebar-item id="news">
           <template #icon>
-            <i 
-            shadow 
-            dark 
-            class='bx bx-news'></i>
+            <NuxtLink to="/news">
+              <i 
+              shadow 
+              dark 
+              class='bx bx-news'></i>
+            </NuxtLink>
           </template>
           News
         </vs-sidebar-item>
         <vs-sidebar-item id="gallery">
           <template #icon>
-            <i 
-            shadow 
-            dark 
-            class='bx bx-images'></i>
+            <NuxtLink to="/gallery">
+              <i 
+              shadow 
+              dark 
+              class='bx bx-images'></i>
+            </NuxtLink>
           </template>
           Gallery
         </vs-sidebar-item>
@@ -59,19 +78,34 @@
           </template>
           <vs-sidebar-item id="Instagram">
             <template #icon>
-              <i class='bx bxl-instagram'></i>
+              <NuxtLink to="/instagram">
+                <i 
+                  shadow 
+                  dark
+                  class='bx bxl-instagram'></i>
+              </NuxtLink>
             </template>
             Instagram
           </vs-sidebar-item>
           <vs-sidebar-item id="twitter">
             <template #icon>
-              <i class='bx bxl-twitter' ></i>
+                <NuxtLink to="/twitter">
+                  <i
+                  shadow 
+                  dark 
+                  class='bx bxl-twitter' ></i>
+                </NuxtLink>
             </template>
             Twitter
           </vs-sidebar-item>
           <vs-sidebar-item id="Facebook">
             <template #icon>
-              <i class='bx bxl-facebook' ></i>
+               <NuxtLink to="/facebook">
+                <i 
+                shadow 
+                dark
+                class='bx bxl-facebook' ></i>
+               </NuxtLink>
             </template>
             Facebook
           </vs-sidebar-item>
@@ -87,13 +121,23 @@
           </template>
           <vs-sidebar-item id="wallet">
             <template #icon>
-              <i class='bx bxs-coin-stack' ></i>
+                <NuxtLink to="/wallet">
+                 <i 
+                  shadow 
+                  dark 
+                  class='bx bxs-coin-stack' ></i>
+                </NuxtLink>
             </template>
             Debit
           </vs-sidebar-item>
           <vs-sidebar-item id="sign-in">
             <template #icon>
-              <i class='bx bxs-user' ></i>
+              <NuxtLink to="/signin">
+              <i 
+                shadow
+                dark
+                class='bx bxs-user' ></i>
+              </NuxtLink>
             </template>
             Sign-in
           </vs-sidebar-item>
@@ -104,7 +148,14 @@
   <template>
     <div class="billboard">
       <div class="heading">
-          We are the wizards. We are building products that are unique, cool & bring ease in your life.    
+          We are the wizards. Our products are magical. Beleive us!. If you don't then buy our products
+          & services.    
+      </div>
+      <div class="storiesdiv">
+        Everyone have a story. Stories are short, long, easy & diffcult. Every story speak itself about a hero who will chase dreams, 
+        want to paint the world. In the story, we found how can you pain the world & enhance beauty of a world. 
+        Look through eyes of artists. You found nothing ... However, you found something that why you care about hero
+        story.   
       </div>
     </div>
   </template>
@@ -216,7 +267,15 @@ export default {
   text-align: center;
   left: 123px;
 }
+.storiesdiv{
+  position: absolute;
+  left: 125px;
+  width: 300px;
+  top: 242px;
+}
 
-
+.NuxtLink{
+  color: rgb(0,255,0);
+}
 
 </style>
