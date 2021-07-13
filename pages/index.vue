@@ -17,7 +17,8 @@
             <NuxtLink to="/">
               <i 
               shadow 
-              dark 
+              dark
+              gradient 
               class='bx bx-home'></i>
             </NuxtLink>
           </template>
@@ -29,6 +30,7 @@
               <i 
               shadow 
               dark 
+              gradient
               class='bx bxs-shopping-bag-alt'></i>
             </NuxtLink>
           </template>
@@ -40,6 +42,7 @@
               <i 
               shadow 
               dark 
+              gradient
               class='bx bxs-category'></i>
             </NuxtLink>
           </template>
@@ -51,6 +54,7 @@
               <i 
               shadow 
               dark 
+              gradient
               class='bx bx-news'></i>
             </NuxtLink>
           </template>
@@ -62,6 +66,7 @@
               <i 
               shadow 
               dark 
+              gradient
               class='bx bx-images'></i>
             </NuxtLink>
           </template>
@@ -82,6 +87,7 @@
                 <i 
                   shadow 
                   dark
+                  gradient
                   class='bx bxl-instagram'></i>
               </NuxtLink>
             </template>
@@ -93,6 +99,7 @@
                   <i
                   shadow 
                   dark 
+                  gradient
                   class='bx bxl-twitter' ></i>
                 </NuxtLink>
             </template>
@@ -104,6 +111,7 @@
                 <i 
                 shadow 
                 dark
+                gradient
                 class='bx bxl-facebook' ></i>
                </NuxtLink>
             </template>
@@ -125,6 +133,7 @@
                  <i 
                   shadow 
                   dark 
+                  gradient
                   class='bx bxs-coin-stack' ></i>
                 </NuxtLink>
             </template>
@@ -136,6 +145,7 @@
               <i 
                 shadow
                 dark
+                gradient
                 class='bx bxs-user' ></i>
               </NuxtLink>
             </template>
