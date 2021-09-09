@@ -1,14 +1,10 @@
 <template>
-  <div class="center examplex">
-    <template>
-    <div class="hidden">
+  <div class="window">
+  <template>
       <vs-sidebar
         absolute
-        hover-expand
-        reduce
         v-model="active"
-        open
-        >
+        open>
         <template #logo>
           <img src="../static/logo.png" alt=""/>
         </template>
@@ -46,7 +42,7 @@
               class='bx bxs-category'></i>
             </NuxtLink>
           </template>
-          Apps
+          Apps & Services
         </vs-sidebar-item>
         <vs-sidebar-item id="news">
           <template #icon>
@@ -72,7 +68,7 @@
           </template>
           Gallery
         </vs-sidebar-item>
-        <vs-sidebar-group>
+        <!-- <vs-sidebar-group>
           <template #header>
             <vs-sidebar-item arrow>
               <template #icon>
@@ -115,7 +111,7 @@
                 class='bx bxl-facebook' ></i>
                </NuxtLink>
             </template>
-            Facebook
+   .         Facebook
           </vs-sidebar-item>
         </vs-sidebar-group>
         <vs-sidebar-group>
@@ -151,26 +147,26 @@
             </template>
             Sign-in
           </vs-sidebar-item>
-        </vs-sidebar-group>
+        </vs-sidebar-group> -->
       </vs-sidebar>
-    </div>    
   </template>
   <template>
     <div class="billboard">
       <div class="heading">
-          We are the wizards. Our products are magical. Beleive us!. If you don't then buy our products
-          & services.    
+          Today we have most sophisticated technology available. These technology are
+          help us to solve the 21-century Issues. Technologies designed for the betterment of the
+          humanlity.  
       </div>
       <div class="storiesdiv">
-        Everyone have a story. Stories are short, long, easy & diffcult. Every story speak itself about a hero who will chase dreams, 
-        want to paint the world. In the story, we found how can you pain the world & enhance beauty of a world. 
-        Look through eyes of artists. You found nothing ... However, you found something that why you care about hero
-        story.   
+           Your genetical-material store in the cloud. You want to know proteins health, predicitibity of alien-code, and other operations that in your body.
+          This is possible only because of advance technologies. 
       </div>
     </div>
   </template>
   </div>
 </template>
+
+
 <script>
 import Logo from '~/components/Logo.vue'
 import VuesaxLogo from '~/components/VuesaxLogo.vue'
@@ -266,26 +262,29 @@ export default {
   width: 27%;
 }
 .billboard{
-  position: relative;
-  left: 0px;
-  top: 233px;
-  font-family: monospace;
+  position:absolute;
+  top: 45px;
+  left: 83px;
+  width: 50rem;
+
 }
 .heading{
   position: absolute;
-  width: 300px;
-  text-align: center;
-  left: 123px;
+  top: 133px;
+  left:284px;
+  width: 50%;
 }
 .storiesdiv{
-  position: absolute;
-  left: 125px;
-  width: 300px;
-  top: 242px;
+  position:absolute;
+  top: 573px;
+  left:234px;
+  width: 50%;
 }
+
 
 .NuxtLink{
   color: rgb(0,255,0);
 }
+
 
 </style>
