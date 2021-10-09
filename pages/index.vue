@@ -68,101 +68,64 @@
           </template>
           Gallery
         </vs-sidebar-item>
-        <!-- <vs-sidebar-group>
-          <template #header>
-            <vs-sidebar-item arrow>
-              <template #icon>
-                <i class='bx bx-group'></i>
-              </template>
-                Connect
-            </vs-sidebar-item>
-          </template>
-          <vs-sidebar-item id="Instagram">
-            <template #icon>
-              <NuxtLink to="/instagram">
-                <i 
-                  shadow 
-                  dark
-                  gradient
-                  class='bx bxl-instagram'></i>
-              </NuxtLink>
-            </template>
-            Instagram
-          </vs-sidebar-item>
-          <vs-sidebar-item id="twitter">
-            <template #icon>
-                <NuxtLink to="/twitter">
-                  <i
-                  shadow 
-                  dark 
-                  gradient
-                  class='bx bxl-twitter' ></i>
-                </NuxtLink>
-            </template>
-            Twitter
-          </vs-sidebar-item>
-          <vs-sidebar-item id="Facebook">
-            <template #icon>
-               <NuxtLink to="/facebook">
-                <i 
-                shadow 
-                dark
-                gradient
-                class='bx bxl-facebook' ></i>
-               </NuxtLink>
-            </template>
-   .         Facebook
-          </vs-sidebar-item>
-        </vs-sidebar-group>
-        <vs-sidebar-group>
-          <template #header>
-            <vs-sidebar-item arrow>
-              <template #icon>
-                <i class='bx bxs-user-circle' ></i>
-              </template>
-                Profile
-            </vs-sidebar-item>
-          </template>
-          <vs-sidebar-item id="wallet">
-            <template #icon>
-                <NuxtLink to="/wallet">
-                 <i 
-                  shadow 
-                  dark 
-                  gradient
-                  class='bx bxs-coin-stack' ></i>
-                </NuxtLink>
-            </template>
-            Debit
-          </vs-sidebar-item>
-          <vs-sidebar-item id="sign-in">
-            <template #icon>
-              <NuxtLink to="/signin">
-              <i 
-                shadow
-                dark
-                gradient
-                class='bx bxs-user' ></i>
-              </NuxtLink>
-            </template>
-            Sign-in
-          </vs-sidebar-item>
-        </vs-sidebar-group> -->
       </vs-sidebar>
   </template>
   <template>
     <div class="billboard">
-      <div class="heading">
-          Today we have most sophisticated technology available. These technology are
-          help us to solve the 21-century Issues. Technologies designed for the betterment of the
-          humanlity.  
-      </div>
-      <div class="storiesdiv">
-           Your genetical-material store in the cloud. You want to know proteins health, predicitibity of alien-code, and other operations that in your body.
-          This is possible only because of advance technologies. 
-      </div>
+      <vs-card>
+        <template #title>
+            <h3> Wizdwarfs </h3>
+        </template>
+        <template #img>
+          <img src="../static/background.png" alt="biocomputer"/>
+        </template>
+        <template #text>
+          <div class="heading">
+            <a href="#"> Read more ...</a>
+          </div>
+        </template>
+      </vs-card>
+        <div class="leaderboard">
+          <vs-card>
+            <template #title></template>
+            <template #img>
+              <img src="../static/download.jpeg" alt="DNA-computing"/>
+            </template>
+            <template #text>
+              <div class="board">
+                  Paint the World 
+              </div>
+            </template>
+          </vs-card>
+        </div>
+        <template >
+          <div class="social">
+            <div class="socialLinks">
+              <vs-button class='facebook'>
+                  <i class='bx bxl-facebook-circle' ></i>
+              </vs-button>
+              <vs-button class='twitter'>
+                <i class='bx bxl-twitter' ></i>
+              </vs-button>
+              <vs-button class='instagram'>
+                <i class='bx bxl-instagram' ></i>
+              </vs-button>
+              <vs-button class='linkedin'>
+                <i class='bx bxl-linkedin' ></i>
+              </vs-button>
+            </div>
+          </div>
+          <div class="codebase">
+            <span class="commit"> <i class='bx bx-git-commit' > 769 </i></span>
+          </div>
+          <div class="fork">
+            <vs-button class="forked">
+              <i class='bx bx-git-repo-forked'></i>
+            </vs-button>
+          </div>
+        </template>
     </div>
-  </template>
+    </template>
   </div>
 </template>
 
@@ -263,27 +226,92 @@ export default {
 }
 .billboard{
   position:absolute;
-  top: 45px;
-  left: 83px;
+  top: 100px;
+  left: 318px;
   width: 50rem;
+  shape-rendering: geometricprecision;
 
 }
 .heading{
   position: absolute;
   top: 133px;
-  left:284px;
+  left:229px;
   width: 50%;
 }
-.storiesdiv{
-  position:absolute;
-  top: 573px;
-  left:234px;
-  width: 50%;
-}
-
 
 .NuxtLink{
   color: rgb(0,255,0);
+}
+
+.leaderboard{
+  position: absolute;
+  top:203px;
+  left:6px;
+  width:100%;
+}
+.board{
+  position: relative;
+  top:7px;
+  left:97px;
+  font-size: large;
+  color:black;
+  font-family: system-ui;
+  font-stretch: semi-condensed;
+}
+.social{
+  position:relative;
+  height:200px;
+  background: black;
+  top:300px;
+  left:-329px;
+  border-radius: 42px;
+  width: 1313px;
+}
+.socialLinks{
+  position: relative;
+  left:100px;
+  top: 45px;
+  width:1200px;
+}
+.twitter{
+  position: relative;
+  top:39px;
+}
+.instagram{
+  position: relative;
+  left:67px;
+  top:-66px;
+}
+.linkedin{
+  position: relative;
+  top: -27px;
+  left: 67px;
+}
+.codebase{
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background: white;
+  top:143px;
+  border-radius: 63px;
+  border:2px dotted blue;
+}
+.commit{
+  position: relative;
+  left:10px;
+  top: 40px;
+  color: blueviolet;
+  font-size:large;
+}
+.fork{
+  position: relative;
+  top:27px;
+}
+.forked{
+  position: relative;
+  border-radius: 42px;
+  top:80px;
+  left:-9px;
 }
 
 
