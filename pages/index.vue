@@ -102,28 +102,68 @@
           <div class="social">
             <div class="socialLinks">
               <vs-button class='facebook'>
-                  <i class='bx bxl-facebook-circle' ></i>
+                  <a href="https://m.facebook.com/wizenigma0xGACT/">
+                    <i class='bx bxl-facebook-circle' ></i>
+                  </a>
               </vs-button>
               <vs-button class='twitter'>
-                <i class='bx bxl-twitter' ></i>
+                <a href='https://twitter.com/DwarfWiz'>
+                    <i class='bx bxl-twitter' ></i>
+                </a>
               </vs-button>
               <vs-button class='instagram'>
+                <a href="https://www.instagram.com/wisdomenigma/?fbclid=IwAR0st2X8Oah6gtlQBOHbvBe6DK4S7p-aqUHG7iuF7vpYRT7WCoTRONSmxBs">
                 <i class='bx bxl-instagram' ></i>
+                </a>
               </vs-button>
               <vs-button class='linkedin'>
-                <i class='bx bxl-linkedin' ></i>
+                <a href='https://www.linkedin.com/company/wisdom-enigma/?viewAsMember=true'>
+                  <i class='bx bxl-linkedin' ></i>
+                </a>
               </vs-button>
             </div>
           </div>
           <div class="codebase">
             <span class="commit"> <i class='bx bx-git-commit' > 769 </i></span>
-          </div>
-          <div class="fork">
+            <div class="fork">
             <vs-button class="forked">
-              <i class='bx bx-git-repo-forked'></i>
+              <a href="https://github.com/ali2210/WizDwarf">
+                        <i class='bx bx-git-repo-forked'></i>
+              </a>
+            </vs-button>
+            </div>
+          </div>
+          <div class="sign">
+            <vs-button v-on:click="onGithubLogin($event)" class="github">
+              <i class='bx bxl-github'></i>
+            </vs-button>
+            <vs-button v-on:click="onGoogleLogin($event)" class="google">
+              <i class='bx bxl-google'></i>
+            </vs-button>
+            <vs-button v-on:click="onFacebookLogin($event)" class="facebook-sq">
+              <i class='bx bxl-facebook'></i>
+            </vs-button>
+          </div>
+          <div class="payment">
+            <vs-button class="payment" dark v-on:click="acceptedBtc">
+                <i class='bx bxl-bitcoin'></i>
             </vs-button>
           </div>
         </template>
+    </div>
+    <div class="parallex">
+      <template>
+        <img class="abstract" src="../static/louvre.jpg"/>
+        <div class="abstractText">
+        </div>
+        <div class="contentread">
+          <img class="dance" src="../static/dance.jpg" alt="dance"/>
+          <span class="learn">
+            We design abstract computing algorithms and also conjecture problems. These Hard problems serve as primary key to explore limits of computing and the brain.
+            We are unware of many conjecture '&' fractalism patterns. These dance are so beautiful and it attract every specie.
+          </span>
+        </div>
+      </template>
     </div>
     </template>
   </div>
@@ -139,7 +179,32 @@ export default {
   data:()=>({
     active:'home',
   }),
-  
+  methods: {
+    onGithubLogin : function(event){
+      alert("Github login functionality is not enabled yet");
+    },
+    onFacebookLogin : function(event){
+      alert("Fb login functionality is not enabled yet");
+    },
+    onGoogleLogin : function(event){
+      alert("Google login functionality is not enabled yet");
+    },
+    acceptedBtc : function(){
+      const action_btc = document.getElementsByClassName("board")[0];
+      const divContent = document.createElement("div");
+      divContent.className = "accepted";
+      divContent.style.position = "relative";
+      divContent.style.top = "2px";
+      divContent.style.left = "-96px";
+      divContent.style.fontFamily = "system-ui";
+      divContent.style.fontSize = "smaller";
+      divContent.style.color = "blueviolet";
+      const spanText = document.createElement("span");
+      spanText.innerHTML = "1NKwtLpNmhyyYCPxTYZXuqNbAxmouB7RkB";
+      divContent.appendChild(spanText);
+      action_btc.appendChild(divContent);
+    }
+  },
 }
 </script>
 
@@ -230,7 +295,6 @@ export default {
   left: 318px;
   width: 50rem;
   shape-rendering: geometricprecision;
-
 }
 .heading{
   position: absolute;
@@ -269,22 +333,25 @@ export default {
 }
 .socialLinks{
   position: relative;
-  left:100px;
-  top: 45px;
+  left:198px;
+  top: 73px;
   width:1200px;
+}
+.bxl-facebook-circle, .bxl-instagram, .bxl-twitter, .bxl-linkedin, .bx-git-repo-forked{
+  color: white
 }
 .twitter{
   position: relative;
-  top:39px;
+  top:34px;
 }
 .instagram{
   position: relative;
   left:67px;
-  top:-66px;
+  top:-72px;
 }
 .linkedin{
   position: relative;
-  top: -27px;
+  top: -37px;
   left: 67px;
 }
 .codebase{
@@ -292,7 +359,7 @@ export default {
   height: 100px;
   width: 100px;
   background: white;
-  top:143px;
+  top:171px;
   border-radius: 63px;
   border:2px dotted blue;
 }
@@ -305,7 +372,8 @@ export default {
 }
 .fork{
   position: relative;
-  top:27px;
+  top:-71px;
+  left: -24px;
 }
 .forked{
   position: relative;
@@ -313,6 +381,61 @@ export default {
   top:80px;
   left:-9px;
 }
-
-
+.sign{
+  position: absolute;
+  left:74px;
+  top:577px;
+}
+.google{
+  position: absolute;
+  left:46px;
+}
+.facebook-sq{
+  position: absolute;
+  top:-43px;
+  left:44px;
+}
+.payment{
+  width: 100px;
+  position: absolute;
+  top:240px;
+  left:-9px;
+  height:41px;
+}
+.bxl-bitcoin{
+  background: linear-gradient(90deg,red, orange);
+  color : yellow;
+  transform: scale3d(1.5,1.5,1.5);
+  border-radius: 10px;
+  border:none;
+}
+.parallex{
+  position: absolute;
+  top:759px;
+}
+.abstractText{
+  width: 731px;
+  background:purple;
+  height:19px;
+  position: absolute;
+}
+.contentread{
+  position: absolute;
+  width: 285px;
+  top: 567px;
+  left: 200px;
+  height:98px;
+  color:purple;
+}
+.dance{
+  width: 233px;
+  height:127px;
+  position: relative;
+  top: 28px;
+}
+.learn{
+  position: relative;
+  top:-33px;
+  left:245px;
+}
 </style>
