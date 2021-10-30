@@ -186,7 +186,7 @@
                  <h3> Opal Artwork </h3>
                 </template>
                 <template #image>
-                  <img src="../static/illusion.jpeg" alt=""/>
+                  <!-- <img src="../static/illusion.jpeg" alt=""/> -->
                 </template>
                 <template #link>
                   <a href="https://opensea.io/assets/matic/0xe7ea2e2be12c257d376400cb231d8ee51e972bd6/41506717256369801583211002721974187832999321087580976075953145296336844711889/">
