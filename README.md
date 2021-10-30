@@ -1,5 +1,5 @@
 # dwarfs-pwa
-
+[![Deploy to Firebase Hosting on merge](https://github.com/ali2210/expert-enigma/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/ali2210/expert-enigma/actions/workflows/firebase-hosting-merge.yml)
 ## Build Setup
 
 ```bash
