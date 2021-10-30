@@ -20,7 +20,7 @@
           </template>
           Home
         </vs-sidebar-item>
-        <vs-sidebar-item id="shop">
+        <!-- <vs-sidebar-item id="shop">
           <template #icon>
            <NuxtLink to="/shop">
               <i 
@@ -55,7 +55,7 @@
             </NuxtLink>
           </template>
           News
-        </vs-sidebar-item>
+        </vs-sidebar-item> -->
         <vs-sidebar-item id="gallery">
           <template #icon>
             <NuxtLink to="/gallery">
@@ -145,7 +145,7 @@
             </vs-button>
           </div>
           <div class="payment">
-            <vs-button class="payment" dark v-on:click="acceptedBtc">
+            <vs-button class="payments" dark v-on:click="acceptedBtc">
                 <i class='bx bxl-bitcoin'></i>
             </vs-button>
           </div>
@@ -160,8 +160,47 @@
           <img class="dance" src="../static/dance.jpg" alt="dance"/>
           <span class="learn">
             We design abstract computing algorithms and also conjecture problems. These Hard problems serve as primary key to explore limits of computing and the brain.
-            We are unware of many conjecture '&' fractalism patterns. These dance are so beautiful and it attract every specie.
+            We are unware of many conjecture '&' fractalism patterns. These dance are so beautiful and it attract everyone and we love these dance. We can acheive through the Quantum Computing Interface because classical have some limitations.
           </span>
+        </div>
+        <div class="nft-card">
+          <div class="nft-link">
+            <vs-card type="3">
+               <template #title>
+                 <h3> Wizdwarfs </h3>
+               </template>
+               <template #link>
+                  <a href="https://opensea.io/assets/matic/0xe7ea2e2be12c257d376400cb231d8ee51e972bd6/24547768641536978472723590075963550080531792743048580483079221528577123894908/">
+                    <i class='bx bxs-crown'> Gemstones </i>
+                  </a>
+              </template>
+               <template #text>
+                  <p>
+                    We offer our artwork NFTs as royalty. Buy royalty if you like to.
+                  </p>
+              </template>
+            </vs-card>
+            <div class="nft-2">
+              <vs-card type="5">
+                <template #title>
+                 <h3> Opal Artwork </h3>
+                </template>
+                <template #image>
+                  <img src="../static/illusion.jpeg" alt=""/>
+                </template>
+                <template #link>
+                  <a href="https://opensea.io/assets/matic/0xe7ea2e2be12c257d376400cb231d8ee51e972bd6/41506717256369801583211002721974187832999321087580976075953145296336844711889/">
+                    <i class='bx bxs-shopping-bag'> Opal </i>
+                  </a>
+                </template>
+                <template #text>
+                 <p>
+                   Software is an illusion image of a mind 
+                </p>
+                </template>
+            </vs-card>
+            </div>
+          </div>
         </div>
       </template>
     </div>
@@ -173,7 +212,6 @@
 <script>
 import Logo from '~/components/Logo.vue'
 import VuesaxLogo from '~/components/VuesaxLogo.vue'
-
 
 export default {
   data:()=>({
@@ -284,11 +322,13 @@ export default {
   font-weight: 400;
   margin: 10px;
 }
+
 .logo{
   position: relative;
   left: 332px;
   width: 27%;
 }
+
 .billboard{
   position:absolute;
   top: 100px;
@@ -296,6 +336,7 @@ export default {
   width: 50rem;
   shape-rendering: geometricprecision;
 }
+
 .heading{
   position: absolute;
   top: 133px;
@@ -313,6 +354,7 @@ export default {
   left:6px;
   width:100%;
 }
+
 .board{
   position: relative;
   top:7px;
@@ -322,6 +364,7 @@ export default {
   font-family: system-ui;
   font-stretch: semi-condensed;
 }
+
 .social{
   position:relative;
   height:200px;
@@ -331,29 +374,35 @@ export default {
   border-radius: 42px;
   width: 1313px;
 }
+
 .socialLinks{
   position: relative;
   left:198px;
   top: 73px;
   width:1200px;
 }
+
 .bxl-facebook-circle, .bxl-instagram, .bxl-twitter, .bxl-linkedin, .bx-git-repo-forked{
   color: white
 }
+
 .twitter{
   position: relative;
   top:34px;
 }
+
 .instagram{
   position: relative;
   left:67px;
   top:-72px;
 }
+
 .linkedin{
   position: relative;
   top: -37px;
   left: 67px;
 }
+
 .codebase{
   position: relative;
   height: 100px;
@@ -363,6 +412,7 @@ export default {
   border-radius: 63px;
   border:2px dotted blue;
 }
+
 .commit{
   position: relative;
   left:10px;
@@ -370,38 +420,99 @@ export default {
   color: blueviolet;
   font-size:large;
 }
+
 .fork{
   position: relative;
   top:-71px;
   left: -24px;
 }
+
 .forked{
   position: relative;
   border-radius: 42px;
   top:80px;
   left:-9px;
 }
+
 .sign{
   position: absolute;
   left:74px;
   top:577px;
 }
+
 .google{
   position: absolute;
   left:46px;
 }
+
 .facebook-sq{
   position: absolute;
   top:-43px;
   left:44px;
 }
+
 .payment{
   width: 100px;
   position: absolute;
-  top:240px;
-  left:-9px;
+  top:227px;
+  left:68px;
   height:41px;
+  display: contents;
 }
+
+.payments{
+  position: relative;
+  left:171px;
+  top:103px;
+  animation: drops 2s alternate infinite;
+}
+
+.payments:hover{
+  background: #35495e;
+}
+
+@keyframes drops {
+  0%{
+    top:103px;
+  }
+  5%{
+    top: 102px;
+  }
+  10%{
+    top: 101px;
+  }
+  20%{
+    top: 90px;
+  }
+  30%{
+    top: 60px;
+  }
+  50%{
+    top: 30px;
+  }
+  60%{
+    top: -30px;
+  }
+  70%{
+    top: 60px;
+    border: 1px dotted red;
+    transform: scale3d(1, 1, 1);
+  }
+  80%{
+    top: 90px;
+    border: 1px solid gold;
+    transform: scale3d(0.5, 0.5, 0.5);
+  }
+  90%{
+    top:103px;
+    border : 1px dashed red;
+    transform: scale3d(1.5, 1.5, 1.5);
+  }
+  100%{
+    border:none;
+  }
+}
+
 .bxl-bitcoin{
   background: linear-gradient(90deg,red, orange);
   color : yellow;
@@ -409,16 +520,19 @@ export default {
   border-radius: 10px;
   border:none;
 }
+
 .parallex{
   position: absolute;
   top:759px;
 }
+
 .abstractText{
-  width: 731px;
-  background:purple;
+  width: 805px;
+  background:whitesmoke;
   height:19px;
   position: absolute;
 }
+
 .contentread{
   position: absolute;
   width: 285px;
@@ -427,15 +541,39 @@ export default {
   height:98px;
   color:purple;
 }
+
 .dance{
   width: 233px;
   height:127px;
   position: relative;
   top: 28px;
 }
+
 .learn{
   position: relative;
   top:-33px;
   left:245px;
+}
+.nft-card{
+  position: relative;
+  width: 562px;
+  height:539px;
+  left:797px;
+  top: -523px;
+  border-radius: 26px;
+}
+.nft-link{
+  position: relative;
+  top:90px;
+  left:243px;
+  font-size: large;
+}
+.nft-2{
+  position: relative;
+  top:127px;
+  font-size: large;
+}
+.bxs-crown{
+  color:white
 }
 </style>
