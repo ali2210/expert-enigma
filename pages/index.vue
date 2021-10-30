@@ -56,7 +56,7 @@
           </template>
           News
         </vs-sidebar-item> -->
-        <vs-sidebar-item id="gallery">
+        <!-- <vs-sidebar-item id="gallery">
           <template #icon>
             <NuxtLink to="/gallery">
               <i 
@@ -67,7 +67,7 @@
             </NuxtLink>
           </template>
           Gallery
-        </vs-sidebar-item>
+        </vs-sidebar-item> -->
       </vs-sidebar>
   </template>
   <template>
