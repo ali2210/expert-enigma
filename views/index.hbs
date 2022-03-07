@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/primevue/resources/themes/lara-light-indigo/theme.css" rel="stylesheet">
+    <link href="https://unpkg.com/primevue/resources/primevue.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/primeicons/primeicons.css" rel="stylesheet">
+    <title> {{.Title}} </title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/primevue/core/core.min.js"></script>
+    <script src="https://unpkg.com/primevue/slider/slider.min.js"></script>
+    <script src="https://unpkg.com/vue-router@4.0.0/dist/vue-router.global.js"></script>
+    <script src="https://unpkg.com/primevue@^3/dock/dock.min.js"></script>
+    <script src="https://unpkg.com/primevue@^3/toast/toast.min.js"></script>
+    <script src="https://unpkg.com/primevue@^3/toastservice/toastservice.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch-lite.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.5.1/dist/algoliasearch.umd.js"></script>
+</head>
+<body>
+    <div id="app" class="dock-menu">
+        <p-menu-bar>
+            <p-toast></p-toast>
+            <p-toast position="top-center" group="tc"></p-toast>
+            <i class="pi pi-home" style="display: flex;position: absolute;left: 658px;top: 29px;font-size: x-large;color: slategray;"></i>
+            <span class="time" style="display: flex; position: absolute; left: 625px; top: 4pc; font-size: x-large; color: slategray;"> Wednesday 10:00 PKT </span>
+            <Button type="button" label ="Secondary" class="submenu" style="display: flex; position: absolute; border: none; background: transparent;">
+                <i class="pi pi-bars"></i>
+            </Button>
+            <form class="search-input" method="post" action="/search">
+                <Button type="button" label ="Secondary" class="search" style="display: flex; position: absolute; left: 54px; border: none; background: transparent;">
+                    <i class="pi pi-search"></i>
+                </Button>
+                <Input type="text" name="search" placeholder="Search" class="find" style="position: relative;left: 5pc;top: 20px;border-radius: 7px; visibility : hidden;"></Input>
+            </form>
+            <i class="pi pi-desktop" title="" style="position: absolute;display: flex;left: 59pc;"></i>
+            <i class="pi pi-tablet" title="" style="position: absolute;display: flex;left: 61pc;"></i>
+            <i class="pi pi-mobile" title="" style="display: flex;position: absolute;left: 63pc;"></i>
+            <i class="pi pi-wifi" style="display: flex;position: absolute;left: 65pc;"></i>
+            <i class="pi pi-sort-numeric-down" style="display: flex;position: absolute;left: 67pc;">
+                    <span class="downloadmeter" style="position: absolute;top: 16px;left: -1px;"></span>
+            </i>
+        </p-menu-bar>
+        <div class="vertical-menu" style="display: flex;position: absolute;top: 4pc;width: 7pc;height: 25pc;background: whitesmoke;border-radius: 19px; visibility:hidden;">
+            
+            <i class="pi pi-lock" title="Account Locked" style="display: flex;position: absolute;left: 3pc;top: 2pc;color: slategray; "></i>
+            <a href="/download" title="How to install" style="display: flex;position: absolute;left: 3pc;top: 5pc;color: slategray;">
+                <i class="pi pi-download"></i>
+            </a>
+            <a href="/projects" title="Projects already in production" style="position: absolute;display: flex;left: 3pc;top: 8pc;color: slategray;">
+                <i class="pi pi-box"></i>
+            </a>
+            <a href="/sdk" title="Software Development Tools" style="position: absolute;display: flex;left: 3pc;top: 11pc;color: slategray;">
+                <i class="pi pi-briefcase"></i>
+            </a>
+            <a href="/api" title="Developers tools" style="position: absolute;display: flex;left: 3pc;top: 14pc;color: slategray;">
+                <i class="pi pi-key"></i>
+            </a>
+            <i class="pi pi-bell" style="position: absolute;display: flex;left: 3pc;top: 17pc;color: slategray;"></i>
+            <a href="/sign" title="Unlock the Account" style="position: absolute;display: flex;left: 3pc;top: 20pc;color: slategray;">
+                <i class="pi pi-sign-in"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="Cloud Provision Infrastructure"></div>
+    <img src="https://mloegv6p7igz.i.optimole.com/1uQV8HE.c8bm~2d7d7/w:626/h:626/q:55/https://syndrometech.net/wp-content/uploads/2020/11/Hyperconverged-Infrastructure.jpg" alt="infrastructure provision" style="display: flex;position: absolute;left: 24pc;top:6pc;" />
+    <p style="position: absolute;display: flex;top: 13pc;left: 16pc;width: 15pc;">
+        Autonomous, Collaborate, Delivered and Mointor are key ingredients for software provision.
+        Software provision change the infrastructure entirely. Infrastructure is just a piece of software.
+        <i class="pi pi-star-fill" style="display: flex;position: absolute;top: 7pc;left: 5pc;color: gold;"></i>
+    </p>
+
+    <p style="display: flex;position: absolute;top: 32pc;left: 59pc; width:12pc;">
+        Our delicated team, work harder to make it possible that we adapt provision.
+    </p>
+
+    <p style="display: flex;position: absolute;top: 11pc;width: 20pc;left: 57pc;">
+        We had launch decentralized molecular interface. This tool trace molecular activities of your body.
+        This product will reveloutionize the health Field. We are building great products that enchance user experience, 
+        change lifestyle and more important it spread happiness arcoss the world.!PAINT THE WORLD
+    </p>
+
+    <a href="https://twitter.com/DwarfWiz" style="position: absolute;display: flex;top: 41pc;left: 30pc;color: slategray;">
+        <i class="pi pi-twitter"></i>
+    </a>
+    <a href="https://www.reddit.com/r/wisdomenigma" style="position: absolute;display: flex;top: 41pc;left: 32pc;color: slategray;">
+        <i class="pi pi-reddit"></i>
+    </a>
+    <a href="https://m.facebook.com/wizdwarfs/?__nodl&refsrc=deprecated&ref=external%3Awww.google.com&_rdr" style="position: absolute;display: flex;top: 41pc;left: 42pc;color: slategray;">
+        <i class="pi pi-facebook"></i>
+    </a>
+    <a href="https://www.youtube.com/channel/UCziNXOl_swLu-SXWWmjFVNA"style="position: absolute;display: flex;top: 41pc;left: 44pc;color: slategray;">
+        <i class="pi pi-youtube"></i>
+    </a>
+    <a href="https://www.instagram.com/wisdomenigma"style="position: absolute;display: flex;top: 41pc;left: 46pc;color: slategray;">
+        <i class="pi pi-instagram"></i>
+    </a>
+    <a href="https://app.slack.com/client/T02AQ62EHHR/C02ALUWQ4LV" style="position: absolute;display: flex;top: 41pc;left: 48pc;color: slategray;">
+        <i class="pi pi-slack"></i>
+    </a>
+    <p style="position: absolute;display: flex;top: 40pc;left: 52pc;color: slategray;">
+        WisdomEnigma, Inc 2022
+    </p>
+
+  <script>
+        
+        const desktop = document.getElementsByClassName('pi-desktop')[0];
+        const tab = document.getElementsByClassName('pi-tablet')[0];
+        const mobile = document.getElementsByClassName('pi-mobile')[0];
+        const wificonn = document.getElementsByClassName('pi-wifi')[0];
+        const downlink = document.getElementsByClassName('pi-sort-numeric-down')[0];
+        const timeDate = document.getElementsByClassName('time')[0];
+        const to_search = document.getElementsByClassName('search')[0];
+        const find = document.getElementsByClassName('find')[0];
+        const submenu = document.getElementsByClassName('submenu')[0];
+        const vertical = document.getElementsByClassName('vertical-menu')[0];
+        
+        let day = new Date().getDay()
+        switch (day) {
+            case 1:
+            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Mon';
+            break;
+            case 2:
+            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Tues';
+            break;
+            case 3:
+            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Wed';
+            break;
+            case 4:
+            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Thrus';
+            break;
+            case 5:
+            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Fri';
+            break;
+            case 6:
+            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Sat';
+            break;
+            case 7:
+            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Sun';
+            break;
+        }
+        
+        if (!navigator.userAgentData.mobile) {
+            desktop.title = navigator.userAgent+ "," + navigator.vendor;
+            desktop.style.color = "green";
+        }else if (navigator.userAgent === 'Tablet'){
+            tab.title = navigator.userAgent+ "," + navigator.vendor;
+            tab.style.color = "green";
+        }else if (navigator.userAgentData.mobile){
+            mobile.title = navigator.userAgent+ "," + navigator.vendor;
+            mobile.style.color = "green";
+        }
+
+        if (navigator.connection.downlink >= '0'){
+            wificonn.style.color = "green";
+            downlink.style.color = "green";
+            downlink.children[0].innerHTML = navigator.connection.downlink; 
+        }else{
+            wificonn.style.color = "red";
+            downlink.style.color = "red";
+            downlink.children[0].innerHTML = navigator.connection.downlink;
+        }
+
+        to_search.addEventListener('click', ()=>{
+            if (find.style.visibility === 'hidden'){
+                find.style.visibility = "visible";
+            }else{
+                find.style.visibility = "hidden";
+            }
+        });
+
+        submenu.addEventListener('click', ()=>{
+            if(vertical.style.visibility === 'hidden'){
+                vertical.style.visibility = "visible";
+            }else{
+                vertical.style.visibility = "hidden";
+            }
+        });
+
+        if (!(Notification in window)){
+            alert("Please enable brower notifications permission to unlock your account.")
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+    <META HTTP-EQUIV="Expires" CONTENT="-1">
+    <link href="https://unpkg.com/primevue/resources/themes/lara-light-indigo/theme.css" rel="stylesheet">
+    <link href="https://unpkg.com/primevue/resources/primevue.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/primeicons/primeicons.css" rel="stylesheet">
+    <title> {{.Title}} </title>
+    <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
+    <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
+</head>
+<body>
+    <div class="codebar">
+        
+        <p style="position: absolute;left: 29pc;top: 6pc;color: slategray;">
+            Last bit should be "0". Reedme code 3 bit long.
+        </p>
+        <form class="codeform" method="post" action="/dashboard">
+            <Input type="text" class="qubit-0" name="qubit0" value="" style="position: absolute;top: 10pc;left: 25pc;height: 6pc;width: 6pc;border-radius: 25px;border: 1px slategray solid;color: slategray;font-size: xxx-large;font-family: monospace;"/>
+            <Input type="text" class="qubit-1" name="qubit1" value="" style="position: absolute;top: 10pc;left: 33pc;height: 6pc;width: 6pc;border-radius: 25px;border: 1px slategray solid;color: slategray;font-size: xxx-large;font-family: monospace;"/>
+            <Input type="text" class="qubit-2" name="qubit2" value="" style="position: absolute;top: 10pc;left: 41pc;height: 6pc;width: 6pc;border-radius: 25px;border: 1px slategray solid;color: slategray;font-size: xxx-large;font-family: monospace;"/>
+            <Input type="text" class="qubit-3" name="qubit3" value="" style="position: absolute;top: 10pc;left: 49pc;height: 6pc;width: 6pc;border-radius: 25px;border: 1px slategray solid;color: slategray;font-size: xxx-large;font-family: monospace;"/>
+            <Button type="submit" label="Secondary" style="position: absolute;display: flex;top: 20pc;height: 6pc;width: 6pc;left: 36pc;background: none;border: none;">
+                <i class="pi pi-check"></i>
+            </Button>
+        </form>
+    </div>
+    <script>
+
+        Pusher.logToConsole = true;
+        
+        // web notification
+        const beamsClient = new PusherPushNotifications.Client({
+            instanceId: '10622845-f1ad-4a5a-b078-7ca7e39b770a',
+        });
+
+        // web notification initialization
+        beamsClient.start()
+        .then((beamsClient) => beamsClient.getDeviceId())
+        .then((deviceId) =>
+             console.log("Successfully registered with Beams. Device ID:", deviceId)
+        )
+        .then(() => beamsClient.addDeviceInterest("login"))
+        .then(() => beamsClient.getDeviceInterests())
+        .then((interests) => {
+                console.log("Current interests:", interests);
+        })
+        .catch(console.error);
+    </script>
+</body>
+</html>
