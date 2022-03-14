@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://unpkg.com/primevue/resources/themes/lara-light-indigo/theme.css" rel="stylesheet">
+    <link href="https://unpkg.com/primevue/resources/primevue.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/primeicons/primeicons.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/wisdomenigma/image/upload/v1646722259/icons/favicon_z2a5ij.ico" type="image/x-icon">
+    <link rel="icon" href="https://res.cloudinary.com/wisdomenigma/image/upload/v1646722259/icons/favicon_z2a5ij.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
+    <title> {{.Title}} </title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="https://unpkg.com/primevue/core/core.min.js"></script>
+    <script src="https://unpkg.com/primevue/slider/slider.min.js"></script>
+    <script src="https://unpkg.com/vue-router@4.0.0/dist/vue-router.global.js"></script>
+    <script src="https://unpkg.com/primevue@^3/dock/dock.min.js"></script>
+    <script src="https://unpkg.com/primevue@^3/toast/toast.min.js"></script>
+    <script src="https://unpkg.com/primevue@^3/toastservice/toastservice.min.js"></script>
+
+</head>
+<body>
+    <div id="app" class="dock-menu">
+        <p-menu-bar>
+            <p-toast></p-toast>
+            <p-toast position="top-center" group="tc"></p-toast>
+            <i class="pi pi-home" style="display: flex;position: absolute;left: 658px;top: 29px;font-size: x-large;color: slategray;"></i>
+            <span class="time" style="display: flex; position: absolute; left: 625px; top: 4pc; font-size: x-large; color: slategray;"> Wednesday 10:00 PKT </span>
+            <Button type="button" label ="Secondary" class="submenu" style="display: flex; position: absolute; border: none; background: transparent;">
+                <i class="pi pi-bars"></i>
+            </Button>
+            <form class="search-input" method="post" action="/search">
+                <Button type="button" label ="Secondary" class="search" style="display: flex; position: absolute; left: 54px; border: none; background: transparent;">
+                    <i class="pi pi-search"></i>
+                </Button>
+                <Input type="text" name="search" placeholder="Search" class="find" style="position: relative;left: 5pc;top: -2px;border-radius: 7px; visibility : hidden;"></Input>
+            </form>
+            <i class="pi pi-desktop" title="" style="position: absolute;display: flex;left: 59pc;"></i>
+            <i class="pi pi-tablet" title="" style="position: absolute;display: flex;left: 61pc;"></i>
+            <i class="pi pi-mobile" title="" style="display: flex;position: absolute;left: 63pc;"></i>
+            <i class="pi pi-wifi" style="display: flex;position: absolute;left: 65pc;"></i>
+            <i class="pi pi-sort-numeric-down" style="display: flex;position: absolute;left: 67pc;">
+                    <span class="downloadmeter" style="position: absolute;top: 16px;left: -1px;"></span>
+            </i>
+        </p-menu-bar>
+        <div class="vertical-menu" style="display: flex;position: absolute;top: 4pc;width: 7pc;height: 25pc;background: whitesmoke;border-radius: 19px; visibility:hidden;">
+            
+            <i class="pi pi-lock" title="Account Locked" style="display: flex;position: absolute;left: 3pc;top: 2pc;color: slategray; "></i>
+            <a href="/" title="Home" style="display: flex;position: absolute;left: 3pc;top: 5pc;color: slategray;">
+                <i class="pi pi-home"></i>
+            </a>
+            <a href="/projects" title="Projects already in production" style="position: absolute;display: flex;left: 3pc;top: 8pc;color: slategray;">
+                <i class="pi pi-box"></i>
+            </a>
+            <a href="/sdk" title="Software Development Tools" style="position: absolute;display: flex;left: 3pc;top: 11pc;color: slategray;">
+                <i class="pi pi-briefcase"></i>
+            </a>
+            <a href="/api" title="Developers tools" style="position: absolute;display: flex;left: 3pc;top: 14pc;color: slategray;">
+                <i class="pi pi-key"></i>
+            </a>
+            <i class="pi pi-bell" style="position: absolute;display: flex;left: 3pc;top: 17pc;color: slategray;"></i>
+            <a href="/sign" title="Unlock the Account" style="position: absolute;display: flex;left: 3pc;top: 20pc;color: slategray;">
+                <i class="pi pi-sign-in"></i>
+            </a>
+        </div>
+    </div>
+
+    <div class="description" style="display: flex;position: absolute;left: 16pc;top: 13pc;background: transparent;color: slategray; visibility: visible;">
+        <div class="image">
+            <p>
+                <small class="terminal" style="position: absolute;top: 1.1pc;left: -1pc;color: green;">
+                    $
+                </small>
+                <p style="position: relative;left: 1pc;"> docker pull wizdwarfs/mainv0.0.1:latest </p>
+                <p style="position: relative;left: 1pc;width:23pc;">
+                 docker run --hostname=wizdwarfs -p 127.0.0.1:5000:5000 -v app:/app/app_data -it wizdwarfs/mainv0.0.1
+                </p>
+                <p style="position: absolute;left: 1pc;">
+                    Type CTRL + T on your browser 127.0.0.1:5000
+                </p>
+                <Button type="button" class="server" title="Desktop, Server & Orchestrated Platform" label="Secondary" style="display: flex;position: absolute;top: 11pc;left: 8pc;border: none;background: transparent;color: lightgrey;">
+                    <i class="pi pi-server"></i>
+                </Button>
+                <i class="pi pi-desktop" style="position: absolute;display: flex;top: 11.1pc;left: 7pc;"></i>
+                <i class="pi pi-cloud" style="position: absolute;display: flex;top: 11.1pc;left: 10pc;"></i>
+            </p>
+        </div>
+    </div>
+
+    <div class="d_01" style="display: flex;position: absolute;left: 40pc;top: 23pc;background: transparent;color: slategray;width: 15pc; visibility: hidden">
+        <div class="image">
+            <p>
+                <small class="terminal" style="position: absolute;top: 1.1pc;left: -1pc;color: green;">
+                    $
+                </small>
+                <p style="position: relative;left: 1pc;"> https://ipfs.io/ipfs/QmdNSzEMRevaThbo9K4a9YhdrVM2PTqcQSCBnR4jLJFGYH?filename=docker-compose.yml  </p>
+                <p style="position: relative;left: 1pc;width:23pc;">
+                 docker-compose up
+                </p>
+                <p style="position: absolute;left: 1pc;">
+                    Type CTRL + T on your browser 127.0.0.1:8080
+                </p>
+                <Button type="button" class="cloud"title="Desktop, Server & Orchestrated Platform" label="Secondary" style="display: flex;position: absolute;top: 11pc;left: 8pc;border: none;background: transparent;color: lightgrey;">
+                    <i class="pi pi-cloud"></i>
+                </Button>
+                <i class="pi pi-desktop" style="position: absolute;display: flex;top: 11.1pc;left: 7pc;"></i>
+                <i class="pi pi-server" style="position: absolute;display: flex;top: 11.1pc;left: 10pc;"></i>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        
+        const desktop = document.getElementsByClassName('pi-desktop')[0];
+        const tab = document.getElementsByClassName('pi-tablet')[0];
+        const mobile = document.getElementsByClassName('pi-mobile')[0];
+        const wificonn = document.getElementsByClassName('pi-wifi')[0];
+        const downlink = document.getElementsByClassName('pi-sort-numeric-down')[0];
+        const timeDate = document.getElementsByClassName('time')[0];
+        const to_search = document.getElementsByClassName('search')[0];
+        const find = document.getElementsByClassName('find')[0];
+        const submenu = document.getElementsByClassName('submenu')[0];
+        const vertical = document.getElementsByClassName('vertical-menu')[0];
+        const s_img01 = document.getElementsByClassName('description')[0];
+        const server = document.getElementsByClassName('server')[0];
+        const s_img02 = document.getElementsByClassName('d_01')[0];
+        const cloud = document.getElementsByClassName('cloud')[0];
+        
+        let day = new Date().getDay()
+        switch (day) {
+            case 1:
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Mon';
+            break;
+            case 2:
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Tues';
+            break;
+            case 3:
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Wed';
+            break;
+            case 4:
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Thrus';
+            break;
+            case 5:
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Fri';
+            break;
+            case 6:
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Sat';
+            break;
+            case 7:
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Sun';
+            break;
+        }
+        
+        if (!navigator.userAgentData.mobile) {
+            desktop.title = navigator.userAgent+ "," + navigator.vendor;
+            desktop.style.color = "green";
+        }else if (navigator.userAgent === 'Tablet'){
+            tab.title = navigator.userAgent+ "," + navigator.vendor;
+            tab.style.color = "green";
+        }else if (navigator.userAgentData.mobile){
+            mobile.title = navigator.userAgent+ "," + navigator.vendor;
+            mobile.style.color = "green";
+        }
+
+        if (navigator.connection.downlink >= '0'){
+            wificonn.style.color = "green";
+            downlink.style.color = "green";
+            downlink.children[0].innerHTML = navigator.connection.downlink; 
+        }else{
+            wificonn.style.color = "red";
+            downlink.style.color = "red";
+            downlink.children[0].innerHTML = navigator.connection.downlink;
+        }
+
+        to_search.addEventListener('click', ()=>{
+            if (find.style.visibility === 'hidden'){
+                find.style.visibility = "visible";
+            }else{
+                find.style.visibility = "hidden";
+            }
+        });
+
+        submenu.addEventListener('click', ()=>{
+            if(vertical.style.visibility === 'hidden'){
+                vertical.style.visibility = "visible";
+            }else{
+                vertical.style.visibility = "hidden";
+            }
+        });
+
+        server.addEventListener('click', ()=>{
+            if(s_img02.style.visibility === 'hidden'){
+                s_img02.style.visibility = "visible";
+            }else{
+                s_img02.style.visibility = "hidden";
+            }
+        });
+
+        cloud.addEventListener('click', ()=>{
+            if(s_img01.style.visibility === 'hidden'){
+                s_img01.style.visibility = "visible";
+            }else{
+                s_img01.style.visibility = "hidden";
+            }
+        })
+
+
+    </script>
+</body>
+</html>
