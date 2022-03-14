@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <META HTTP-EQUIV="Pragma" CONTENT="no-cache">
     <META HTTP-EQUIV="Expires" CONTENT="-1">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link href="https://unpkg.com/primevue/resources/themes/lara-light-indigo/theme.css" rel="stylesheet">
     <link href="https://unpkg.com/primevue/resources/primevue.min.css" rel="stylesheet">
     <link href="https://unpkg.com/primeicons/primeicons.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/wisdomenigma/image/upload/v1646722259/icons/favicon_z2a5ij.ico" type="image/x-icon">
+    <link rel="icon" href="https://res.cloudinary.com/wisdomenigma/image/upload/v1646722259/icons/favicon_z2a5ij.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
     <title> {{.Title}} </title>
     <script src="https://js.pusher.com/7.0/pusher.min.js"></script>
     <script src="https://js.pusher.com/beams/1.0/push-notifications-cdn.js"></script>
@@ -31,7 +36,20 @@
     </div>
     <script>
 
-        Pusher.logToConsole = true;
+        //Pusher.logToConsole = true;
+        if ((Notification in window)){
+            alert("Notification not supported by browser"); 
+        }
+
+        else if (Notification.permission !== "granted"){
+            Notification.requestPermission().then(permission =>{
+                if (permission === "granted"){
+                    window.location.reload();
+                }
+            }).catch(error =>{
+                console.error("error: " + error);
+            })
+        }
         
         // web notification
         const beamsClient = new PusherPushNotifications.Client({

@@ -3,9 +3,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link href="https://unpkg.com/primevue/resources/themes/lara-light-indigo/theme.css" rel="stylesheet">
     <link href="https://unpkg.com/primevue/resources/primevue.min.css" rel="stylesheet">
     <link href="https://unpkg.com/primeicons/primeicons.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/wisdomenigma/image/upload/v1646722259/icons/favicon_z2a5ij.ico" type="image/x-icon">
+    <link rel="icon" href="https://res.cloudinary.com/wisdomenigma/image/upload/v1646722259/icons/favicon_z2a5ij.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
     <title> {{.Title}} </title>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/primevue/core/core.min.js"></script>
@@ -50,7 +55,7 @@
             <a href="/download" title="How to install" style="display: flex;position: absolute;left: 3pc;top: 8pc;color: slategray;">
                 <i class="pi pi-download"></i>
             </a>
-            <a href="/projects" title="Projects already in production" style="position: absolute;display: flex;left: 3pc;top: 11pc;color: slategray;">
+            <a href="/userboard/project/traffic" title="Projects insights" style="position: absolute;display: flex;left: 3pc;top: 11pc;color: slategray;">
                 <i class="pi pi-box"></i>
             </a>
             <a href="/sdk" title="Software Development Tools" style="position: absolute;display: flex;left: 3pc;top: 14pc;color: slategray;">
@@ -96,25 +101,25 @@
         let day = new Date().getDay()
         switch (day) {
             case 1:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Mon';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Mon';
             break;
             case 2:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Tues';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Tues';
             break;
             case 3:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Wed';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Wed';
             break;
             case 4:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Thrus';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Thrus';
             break;
             case 5:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Fri';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Fri';
             break;
             case 6:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Sat';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Sat';
             break;
             case 7:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Sun';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Sun';
             break;
         }
         

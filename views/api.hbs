@@ -4,9 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     <link href="https://unpkg.com/primevue/resources/themes/lara-light-indigo/theme.css" rel="stylesheet">
     <link href="https://unpkg.com/primevue/resources/primevue.min.css" rel="stylesheet">
     <link href="https://unpkg.com/primeicons/primeicons.css" rel="stylesheet">
+    <link rel="shortcut icon" href="https://res.cloudinary.com/wisdomenigma/image/upload/v1646722259/icons/favicon_z2a5ij.ico" type="image/x-icon">
+    <link rel="icon" href="https://res.cloudinary.com/wisdomenigma/image/upload/v1646722259/icons/favicon_z2a5ij.ico" type="image/x-icon">
+    <link rel="manifest" href="/manifest.json">
     <title> {{.Title}} </title>
     <script src="https://unpkg.com/vue@next"></script>
     <script src="https://unpkg.com/primevue/core/core.min.js"></script>
@@ -31,7 +36,7 @@
                 <Button type="button" label ="Secondary" class="search" style="display: flex; position: absolute; left: 54px; border: none; background: transparent;">
                     <i class="pi pi-search"></i>
                 </Button>
-                <Input type="text" name="search" placeholder="Search" class="find" style="position: relative;left: 5pc;top: 20px;border-radius: 7px; visibility : hidden;"></Input>
+                <Input type="text" name="search" placeholder="Search" class="find" style="position: relative;left: 5pc;top: -2px;border-radius: 7px; visibility : hidden;"></Input>
             </form>
             <i class="pi pi-desktop" title="" style="position: absolute;display: flex;left: 59pc;"></i>
             <i class="pi pi-tablet" title="" style="position: absolute;display: flex;left: 61pc;"></i>
@@ -65,19 +70,61 @@
 
     <div class="api-manger">
         <div class="api-package-0" style="display: flex;position: absolute;width: 34pc;height: 20pc;top: 8pc;left: 10pc;color: slategray;">
-            <p>
+            <h3 style="position: absolute;left: 14pc;">
                 {{.Crate}}
-            </p>
+            </h3>
+            <div style="position: absolute;top: 7pc;left: 15pc;font-size: xxx-large;">
+                <i class="pi pi-download"></i> {{.Total}} +
+            </div>
+            <div>
+                <section style="position: absolute;top: 18pc;left: 9pc;">
+                     <span style="position: absolute;top: -13pc;left: -8pc;">
+                        {{.Language0}}
+                     </span>
+                    <span style="position: absolute;left: -8pc;top: -7pc;">
+                        {{.Version}}
+                    </span>
+                    {{.Link}}
+                </section>
+            </div>
         </div>
         <div class="api-package-1" style="color: slategray;display: flex;position: absolute;width: 34pc;height: 20pc;top: 12pc;left: 46pc;">
-            <p>
+            <h3 style="position: absolute;left: 14pc;">
                 {{.Crate1}}
-            </p>
+            </h3>
+            <div style="position: absolute;top: 7pc;left: 15pc;font-size: xxx-large;">
+                <i class="pi pi-download"></i> {{.Total_1}} +
+            </div>
+            <div>
+                <section style="position: absolute;top: 18pc;left: 9pc;">
+                     <span style="position: absolute;top: -13pc;left: -8pc;">
+                        {{.Language1}}
+                     </span>
+                        {{.Link_1}}
+                    <span style="position: absolute;left: -8pc;top: -7pc;">
+                        {{.Version_1}}
+                    </span>
+                </section>
+            </div>
         </div>
         <div class="api-package-2" style="display: flex;position: absolute;width: 34pc;height: 20pc;top: 33pc;left: 22pc;color: slategray;">
-            <p>
+            <h3 style="position: absolute;left: 14pc;">
                 {{.Crate2}}
-            </p>
+            </h3>
+            <div style="position: absolute;top: 7pc;left: 15pc;font-size: xxx-large;">
+                <i class="pi pi-download"></i> {{.Total_2}} +
+            </div>
+            <div>
+                <section style="position: absolute;top: 18pc;left: 9pc;">
+                     <span style="position: absolute;top: -13pc;left: -8pc;">
+                        {{.Language2}}
+                     </span>
+                        {{.Link_2}}
+                    <span style="position: absolute;left: -8pc;top: -7pc;">
+                        {{.Version_2}}
+                    </span>
+                </section>
+            </div>
         </div>
     </div>
 
@@ -97,25 +144,25 @@
         let day = new Date().getDay()
         switch (day) {
             case 1:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Mon';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Mon';
             break;
             case 2:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Tues';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Tues';
             break;
             case 3:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Wed';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Wed';
             break;
             case 4:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Thrus';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Thrus';
             break;
             case 5:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Fri';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Fri';
             break;
             case 6:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Sat';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Sat';
             break;
             case 7:
-            timeDate.innerHTML = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getYear()+ ','+ 'Sun';
+            timeDate.innerHTML = new Date().getDate() + '-' + (new Date().getMonth()+1) + '-' + new Date().getFullYear()+ ','+ 'Sun';
             break;
         }
         

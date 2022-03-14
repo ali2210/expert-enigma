@@ -44,6 +44,7 @@ func GetRoute() []RenderRoutes { return webroute }
 // map routing return route rules
 func MapRoute(route string) RenderRoutes {
 
+	// route exist or not exist
 	for r := range GetRoute() {
 		if reflect.DeepEqual(route, GetRoute()[r].Route_Handler_Name) {
 			return GetRoute()[r]
@@ -54,6 +55,7 @@ func MapRoute(route string) RenderRoutes {
 
 func (r RenderRoutes) Validate() error {
 
+	// match prefix with other routes
 	for i := range GetRoute() {
 		if reflect.DeepEqual(r, GetRoute()[i]) {
 			return nil
