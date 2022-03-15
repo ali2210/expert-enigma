@@ -7,15 +7,10 @@ import (
 // events records
 var counter int64 = 0
 
-// notification api credentials
-const instanceId = "10622845-f1ad-4a5a-b078-7ca7e39b770a"
-
-const secretKey = "0595D60941F36A0B21B1474F630395D8238E3355DCD3A2FC91E37A008148B8FD"
-
 func Watchpoint(message_interface map[string]interface{}, interest string) bool {
 
 	// valid beam channel credentials
-	beamsClient, err := pushnotifications.New(instanceId, secretKey)
+	beamsClient, err := pushnotifications.New("10622845-f1ad-4a5a-b078-7ca7e39b770a", "0595D60941F36A0B21B1474F630395D8238E3355DCD3A2FC91E37A008148B8FD")
 	if err != nil {
 		return false
 	}
