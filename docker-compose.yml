@@ -1,0 +1,191 @@
+version: '3.3'
+services:
+
+    #reverse proxy configurations
+    reverse-proxy:
+        # traefik 
+          image: traefik:v2.6
+          command: 
+            
+            # api secure
+            - --api.insecure
+
+            # providers enabled
+            - --providers.consulcatalog=true
+            - --providers.consul=true
+            - --providers.docker=true
+
+            # consul configurations
+            - --providers.consul.endpoints=127.0.0.1:8400
+            - --providers.consul.rootkey=root
+            - --providers.consul.username=root
+            - --providers.consul.password=root
+            - --providers.consul.token=root
+            - --providers.consul.tls.ca=wisdomenigma.crt
+            - --providers.consul.tls.caOptional=false
+            - --providers.consul.tls.cert=wisdomenigma.cert
+            - --providers.consul.tls.key=wisdomenigma.key
+            - --providers.consul.tls.insecureSkipVerify=false
+
+            # consulcatalog configurations
+            - --providers.consulcatalog.refreshInterval=30s
+            - --providers.consulcatalog.prefix=consul
+            - --providers.consulcatalog.requireConsistent=true
+            - --providers.consulcatalog.stale=true
+            - --providers.consulcatalog.cache=true
+            
+            # consul endpoints configuration
+            - --providers.consulcatalog.endpoint.address=127.0.0.1:8500
+            - --providers.consulcatalog.endpoint.scheme=https
+            - --providers.consulcatalog.endpoint.datacenter=dc1
+            - --providers.consulcatalog.endpoint.token=root
+            - --providers.consulcatalog.endpoint.endpointWaitTime=15s
+
+            # consulcatalogs configurations
+            - --providers.consulcatalog.exposedByDefault=true
+            - --providers.consulcatalog.defaultRule=Host(`{{ .Name }}.{{ index .Label\"customLabel\"}}`)
+            - --providers.consulcatalog.connectAware=true
+            - --providers.consulcatalog.connectByDefault=true
+            - --providers.consulcatalog.serviceName=consul
+            
+            #  metrics 
+            - --metrics.influxdb=true
+            - --metrics.influxdb.address=localhost:8089
+            - --metrics.influxdb.protocol=udp
+            - --metrics.influxdb.database=db
+            - --metrics.influxdb.retentionPolicy=two_hours
+            - --metrics.influxdb.username=root
+            - --metrics.influxdb.password=root
+            - --metrics.influxdb.addEntryPointsLabels=true
+            - --metrics.influxdb.addrouterslabels=true
+            - --metrics.influxdb.addServicesLabels=true
+            - --metrics.influxdb.pushInterval=15s
+            - --metrics.influxdb.additionalLabels.host=wisdomenigma
+            - --metrics.influxdb.additionalLabels.environment=production
+          
+          # dependencies checked
+          depends_on:
+              - consul
+              - explorer
+
+          # handshake
+          links:
+              - consul
+              - explorer
+              
+          
+
+          # traefik ports 
+          ports:
+            - "80:80"
+            - "8080:8080"        
+          
+          # volume configurations
+          volumes:
+            - "/var/run/docker.sock:/var/run/docker.sock:ro"
+
+          # services defined as rules
+          labels:
+              - traefik.http.routers.traefik.service=api@internal
+              - traefik.http.services.traefik.loadbalancer.server.port=8080
+              - traefik.http.routers.traefik.tls.certresolver=le
+              - traefik.http.services.traefik.loadbalancer.server.scheme=http
+              - traefik.http.routers.traefik.tls.certresolver=wisdomenigma
+              - traefik.http.routers.explorer.loadbalancer.server.port=3000
+              - traefik.http.routers.explorer.loadbalancer.server.scheme=http
+              - traefik.http.routers.explorer.loadbalancer.passhostheader=true
+              - traefik.http.routers.explorer.loadbalancer.healthcheck.interval=10
+              - traefik.http.routers.explorer.loadbalancer.healthcheck.followredirects=true
+              - traefik.http.routers.explorer.loadbalancer.healthcheck.sticky.cookie.httponly=true
+              - traefik.http.routers.explorer.loadbalancer.healthcheck.sticky.cookie.name="wisdomenigma"
+              - traefik.http.routers.explorer.loadbalancer.healthcheck.sticky.cookie.secure=true
+              - traefik.http.routers.explorer.tls=true
+              - traefik.http.routers.explorer.tls.certresolver=wisdomenigma
+              - traefik.http.routers.explorer.service=explorer-web
+
+
+              #cert
+              - --certificatesresolvers.le.acme.email=wizdwarfs@gmail.com
+              - --certificatesresolvers.le.acme.storage=/acme.json
+              - --certificatesresolvers.le.acme.tlschallenge=true
+      
+    # application configuration 
+    explorer:
+        image: wizdwarfs/explorer:latest
+
+        # application port configuration
+        ports:
+            - "3000:3000"
+        
+        
+        # volume configurations
+        volumes:
+           - "/var/run/docker.sock:/var/run/docker.sock:ro"    
+            
+
+        # state configurations
+        restart: always
+    
+    
+    # consul mesh 
+    consul:
+      image: hashicorp/consul:1.10
+      
+      # consul port configurations
+      ports:
+        - "8400:8400"
+        - "8500:8500"
+        - "8600:53/udp"
+      
+      
+      # consul command execution
+      command: consul agent -server -dev -client=0.0.0.0 -ui -bootstrap -log-level warn
+      
+      # action
+      restart: always
+
+    # db service configurations
+    influxdb:
+      image: influxdb:latest
+
+      # influxdb port configurations
+      ports:
+        - "8086:8086"    
+      
+      # volume configurations (influxdb)
+      volumes:
+        - influxdb-storage:/var/lib/influxdb
+      
+      # enviroment configurations
+      environment:
+      - INFLUXDB_DB=db0
+      - INFLUXDB_ADMIN_USER=root
+      - INFLUXDB_ADMIN_PASSWORD=root
+    
+    chronograf:
+
+      # IMAGE configurations
+      image: chronograf:latest
+
+      # ports configurations for the chronograf
+      ports:
+          - "8888:8888"
+      
+      # volume configurations
+      volumes:
+         - chronograf-storage:/var/lib/chronograf
+      
+      # dependenices configurations
+      depends_on:
+        - influxdb
+      
+      # environment configuration
+      environment:
+      - INFLUXDB_URL=http://influxdb:8086
+      - INFLUXDB_USERNAME=root
+      - INFLUXDB_PASSWORD=root
+
+volumes:
+    influxdb-storage:
+    chronograf-storage:    
+
